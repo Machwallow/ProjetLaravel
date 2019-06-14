@@ -61,7 +61,7 @@
                             Se connecter
                         </a>
                         <div class="dropdown-menu">
-                            <a href="{{ route('login') }}">Se Connecter</a>
+                            <a class="dropdown-item"   href="{{ route('login') }}">Se Connecter</a>
                         </div>
                     </li>
                 @endauth
