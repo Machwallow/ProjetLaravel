@@ -21,6 +21,10 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/mangas', 'MangaController@getLesMangas');
 
+Route::get('/mangas/top5', 'MangaController@getTop5Mangas');
+
+Route::get('/anime', 'AnimeController@getLesAnime');
+
 Route::get('/ajoutGenre','GenreController@getAjoutGenre');
 
 Route::post('/saisieGenre','GenreController@postAjoutGenre');

@@ -6,20 +6,54 @@ namespace App\Metier;
 
 class Manga
 {
-    private $idManga;
+    private $id_manga;
     private $prix;
     private $titre;
+    private $description;
     private $couverture;
     private $genre;
+    private $note_moy;
+
+    /**
+     * @return mixed
+     */
+    public function getDescription()
+    {
+        return $this->description;
+    }
+
+    /**
+     * @param mixed $description
+     */
+    public function setDescription($description): void
+    {
+        $this->description = $description;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getNoteMoy()
+    {
+        return $this->note_moy;
+    }
+
+    /**
+     * @param mixed $note_moy
+     */
+    public function setNoteMoy($note_moy): void
+    {
+        $this->note_moy = $note_moy;
+    }
 
     public function getIdManga()
     {
-        return $this->idManga;
+        return $this->id_manga;
     }
 
-    public function setIdManga($idManga)
+    public function setIdManga($id_manga)
     {
-        $this->idManga = $idManga;
+        $this->id_manga = $id_manga;
     }
 
     public function getPrix()
