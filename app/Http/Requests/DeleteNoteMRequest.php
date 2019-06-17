@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class InsertionGenreRequest extends FormRequest
+class DeleteNoteMRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,7 +24,7 @@ class InsertionGenreRequest extends FormRequest
     public function rules()
     {
         return [
-            'libGenre' => 'required|alpha'
+            //
         ];
     }
 }

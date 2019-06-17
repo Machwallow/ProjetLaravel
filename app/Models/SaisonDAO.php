@@ -31,8 +31,7 @@ class SaisonDAO extends Model
         $lesSaison = array();
 
         foreach($saisons as $saison){
-            $id_saison = $saison->id_saison;
-            $lesSaison[$id_saison] = $this->creerObjetMetier($saison);
+            array_push($lesSaison, $this->creerObjetMetier($saison));
         }
 
         return $lesSaison;

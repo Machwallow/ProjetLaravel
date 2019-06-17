@@ -14,27 +14,43 @@ class NotesSDAO extends Model
 {
     public function getNotesSaisonBySaisonId($id_saison){
 
-        $resNotes = DB::table('notes_saison')->where('id_saison','=', $id_saison)->get();
+        $resNotes = DB::table('notes_s')->where('id_saison','=', $id_saison)->get();
 
         $lesNotes = array();
 
         foreach($resNotes as $note){
-            $id_note_saison = $note->id_note_saison;
-            $lesNotes[$id_note_saison] = $this->creerObjetMetier($note);
+            array_push($lesNotes, $this->creerObjetMetier($note));
+        }
+
+        return $lesNotes;
+    }
+
+    public function getNotesSaisonByUserId($id_user){
+
+        $resNotes = DB::table('notes_s')->where('id_user','=', $id_user)->get();
+
+        $lesNotes = array();
+
+        foreach($resNotes as $note){
+            array_push($lesNotes, $this->creerObjetMetier($note));
         }
 
         return $lesNotes;
     }
 
     public function insertNotesSaison(NoteSaison $noteSaison){
-        DB::table('notes_saison')->insert([
+        DB::table('notes_s')->insert([
             'id_user'=>$noteSaison->getUser()->id,
             'id_saison'=>$noteSaison->getSaison()->getIdSaison(),
             'valeur'=>$noteSaison->getValeur()]);
     }
 
-    public function countNotesSaisonBySaisonID($id_saison){
-        return DB::table('notes_saison')->where('id_saison','=', $id_saison)->count();
+    public function countNotesSaisonById($id_saison){
+        return DB::table('notes_s')->where('id_saison','=', $id_saison)->count();
+    }
+
+    public function deleteNoteById($id_note){
+        DB::table('notes_s')->where('id_note_saison','=',$id_note)->delete();
     }
 
     public function creerObjetMetier(\stdClass $objet)

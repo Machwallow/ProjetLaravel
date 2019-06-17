@@ -13,27 +13,43 @@ class NotesMDAO extends Model
 {
     public function getNotesMangaByMangaId($id_manga){
 
-        $resNotes = DB::table('notes_manga')->where('id_manga','=', $id_manga)->get();
+        $resNotes = DB::table('notes_m')->where('id_manga','=', $id_manga)->get();
 
         $lesNotes = array();
 
         foreach($resNotes as $note){
-            $id_note_manga = $note->id_note_manga;
-            $lesNotes[$id_note_manga] = $this->creerObjetMetier($note);
+            array_push($lesNotes, $this->creerObjetMetier($note));
+        }
+
+        return $lesNotes;
+    }
+
+    public function getNotesMangaByUserId($id_user){
+
+        $resNotes = DB::table('notes_m')->where('id_user','=', $id_user)->get();
+
+        $lesNotes = array();
+
+        foreach($resNotes as $note){
+            array_push($lesNotes, $this->creerObjetMetier($note));
         }
 
         return $lesNotes;
     }
 
     public function insertNotesManga(NoteManga $noteManga){
-        DB::table('notes_manga')->insert([
+        DB::table('notes_m')->insert([
             'id_user'=>$noteManga->getUser()->id,
             'id_manga'=>$noteManga->getManga()->getIdManga(),
             'valeur'=>$noteManga->getValeur()]);
     }
 
     public function countNotesMangaByMangaID($id_manga){
-        return DB::table('notes_manga')->where('id_manga','=', $id_manga)->count();
+        return DB::table('notes_m')->where('id_manga','=', $id_manga)->count();
+    }
+
+    public function deleteNoteById($id_note){
+        DB::table('notes_m')->where('id_note_manga','=',$id_note)->delete();
     }
 
     public function creerObjetMetier(\stdClass $objet)

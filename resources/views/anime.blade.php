@@ -32,7 +32,7 @@
                             <!--Text-->
                             <p class="card-text" style="overflow: hidden">{{ $anime->getDescription() }}</p>
                             <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
-                            <button type="button" class="btn btn-light" style="background-color: #ffc631">Plus d'info</button>
+                            <a href="{{ url('/anime/'.$anime->getIdAnime()) }}" class="btn btn-light" style="background-color: #ffc631">Plus d'info</a>
                         </div>
                     </div>
                 </div>

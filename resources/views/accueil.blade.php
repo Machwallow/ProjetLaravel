@@ -5,12 +5,12 @@
     {!! Html::style('lib/bootstrap/bootstrap.min.css') !!}
     {!! Html::style('css/MangaWorld.css') !!}
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
-    <title>@yield('titrePage')</title>
+    <title>Accueil</title>
 </head>
-<body>
+<body style="background-image: url('img/fond.png')">
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
     <div class="container">
-
+        <img src="img/logo.png" style="max-height: 50px;max-width:50px;margin-right:10px;">
         <a class="navbar-brand" href="{{url('/')}}">MangaShop</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -78,63 +78,19 @@
     </div>
 </nav>
 <header>
-    <h1>@yield('titreItem')</h1>
 </header>
-<div class="container" style="min-height: 380px">
-    @yield('contenu')
+
+<div class="card text-center" style="opacity: .8; max-width: 50%; margin: auto; margin-top:10%;">
+    <div class="card-body">
+        <h5 class="card-title text-black">BIENVENU INCONNU</h5>
+        <p class="card-text">Depêches toi d'aller vite explorer ce super site !!</p>
+        <a href="{{ url('/mangas') }}" class="btn btn-primary">Explorer</a>
+    </div>
+    <div class="card-footer">
+        <p class="card-text">Site réalisé dans le câdre d'un cours en Laravel</p>
+    </div>
 </div>
-<!-- Footer -->
-<footer class="page-footer font-small bg-dark pt-4 position-sticky" style="margin-top : 70px;">
 
-    <!-- Footer Links -->
-    <div class="container-fluid text-center text-white text-md-left">
-
-        <!-- Grid row -->
-        <div class="row">
-
-            <!-- Grid column -->
-            <div class="col-md-6 mt-md-0 mt-3">
-
-                <!-- Content -->
-                <h5 class="text-uppercase">MANGASHOP</h5>
-                <p>MangaShop a été réalisé par Lucas Aupoil & Stanislas Monnier</p>
-
-            </div>
-            <!-- Grid column -->
-
-            <hr class="clearfix w-100 d-md-none pb-3">
-
-            <!-- Grid column -->
-            <div class="col-md-3 mb-md-0 mb-3">
-
-                <!-- Links -->
-                <h5 class="text-uppercase">Liens utiles</h5>
-
-                <ul class="list-unstyled">
-                    <li>
-                        <a href="{{url('/mangas')}}">Les mangas</a>
-                    </li>
-                    <li>
-                        <a href="{{url('/anime')}}">Les anime</a>
-                    </li>
-                </ul>
-
-            </div>
-            <!-- Grid column -->
-
-        </div>
-        <!-- Grid row -->
-
-    </div>
-    <!-- Footer Links -->
-
-    <!-- Copyright -->
-    <div class="footer-copyright text-center text-white-50 py-2">© 2018 Copyright:
-        <a href="https://mdbootstrap.com/education/bootstrap/"> MDBootstrap.com</a>
-    </div>
-    <!-- Copyright -->
-
-</footer>
 {!! Html::script('lib/jquery/jquery-3.3.1.slim.min.js') !!}
 {!! Html::script('lib/js/bootstrap.bundle.js') !!}
 {!! Html::script('lib/js/bootstrap.js') !!}

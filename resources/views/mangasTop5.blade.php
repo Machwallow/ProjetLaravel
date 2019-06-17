@@ -20,10 +20,13 @@
                         <div class="col-md-8">
                             <div class="card-body">
                                 <h3 class="card-title text-danger">Numéro : {{ $i + 1 }}</h3>
+                                <h6 class="text-right"> Note : {{ $lesMangas[$i]->getNoteMoy() }}/5</h6>
                                 <h5 class="card-title ">{{ $lesMangas[$i]->getTitre() }}</h5>
                                 <h6 class="card-title text-warning">{{ $lesMangas[$i]->getGenre()->getLibelleGenre() }}</h6>
                                 <p class="card-text" >{{ $lesMangas[$i]->getDescription() }}</p>
-                                <button type="button" class="btn btn-light" style="background-color: #ffc631">Plus d'info</button>
+                            </div>
+                            <div class="card-footer">
+                                <a href="{{ url('/mangas/'.$lesMangas[$i]->getIdManga()) }}" class="btn btn-light" style="background-color: #ffc631">Plus d'info</a>
                             </div>
                         </div>
                     </div>

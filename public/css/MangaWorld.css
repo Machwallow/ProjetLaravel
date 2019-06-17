@@ -1,5 +1,4 @@
 body { 
-
 }
 
 h1 {
@@ -17,4 +16,10 @@ h1 {
 .dropdown-item:active{
     background-color:#ffc107;
     color:white;
+}
+
+.table td.fit,
+.table th.fit {
+    white-space: nowrap;
+    width: 1%;
 }
